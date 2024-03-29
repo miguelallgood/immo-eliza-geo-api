@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the requirements.txt file into the container at /app
 COPY requirements.txt .
 
+# Update pip
+RUN pip install --upgrade pip
+
 # Install dependencies
 RUN pip install -r requirements.txt
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 8501
 
 # Command to run the Streamlit app
-CMD ["streamlit", "run", "streamlit_app.py"]
+CMD ["streamlit", "run", "streamlit-app.py"]
