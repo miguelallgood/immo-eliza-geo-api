@@ -75,7 +75,7 @@ if st.button('Predict Price'):
         )
 
         # Make a POST request to the FastAPI backend for price prediction
-        response = requests.post('https://immo-eliza-deployment-h5ai.onrender.com/predict', json=item.dict())
+        response = requests.post('https://immo-eliza-fastapi.onrender.com', json=item.dict())
 
         if response.status_code == 200:
             prediction = response.json()['prediction']
